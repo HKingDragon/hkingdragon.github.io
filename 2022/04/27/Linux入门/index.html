@@ -1,0 +1,977 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Linux入门 | Dragon's Blog</title><meta name="keywords" content="Linux"><meta name="author" content="Dragon"><meta name="copyright" content="Dragon"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Linux命令汇总[TOC] 1.Linux的简介​	Linux，全称GNU&#x2F;Linux，是一种免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年10月5日首次发布，它主要受到Minix和Unix思想的启发，是一个基于POSIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux入门">
+<meta property="og:url" content="https://github.com/HKingDragon/hkingdragon.github.io/2022/04/27/Linux%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Dragon&#39;s Blog">
+<meta property="og:description" content="Linux命令汇总[TOC] 1.Linux的简介​	Linux，全称GNU&#x2F;Linux，是一种免费使用和自由传播的类UNIX操作系统，其内核由林纳斯·本纳第克特·托瓦兹于1991年10月5日首次发布，它主要受到Minix和Unix思想的启发，是一个基于POSIX的多用户、多任务、支持多线程和多CPU的操作系统。它能运行主要的Unix工具软件、应用程序和网络协议。它支持32位和64位">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/HKingDragon/hkingdragon.github.io/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)">
+<meta property="article:published_time" content="2022-04-27T11:30:41.000Z">
+<meta property="article:modified_time" content="2022-04-28T12:13:20.686Z">
+<meta property="article:author" content="Dragon">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/HKingDragon/hkingdragon.github.io/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://github.com/HKingDragon/hkingdragon.github.io/2022/04/27/Linux%E5%85%A5%E9%97%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Dragon","link":"链接: ","source":"来源: Dragon's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux入门',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-28 20:13:20'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="Dragon's Blog" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fc1608aa0gw1euctw87ul7g20b40b4mzl.gif&amp;refer=http%3A%2F%2Fwww.sina.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653544265&amp;t=ac0fd90b3540bb1abf4de1135021b748" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Dragon's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">Linux入门</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-04-27T11:30:41.000Z" title="发表于 2022-04-27 19:30:41">2022-04-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-04-28T12:13:20.686Z" title="更新于 2022-04-28 20:13:20">2022-04-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/">系统运维</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">12.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>44分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux入门"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div><article class="post-content" id="article-container"><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id=1933915376&auto=1&height=66"></iframe>
+
+<h1 id="Linux命令汇总"><a href="#Linux命令汇总" class="headerlink" title="Linux命令汇总"></a>Linux命令汇总</h1><p>[TOC]</p>
+<h2 id="1-Linux的简介"><a href="#1-Linux的简介" class="headerlink" title="1.Linux的简介"></a>1.Linux的简介</h2><p>​	Linux，全称GNU&#x2F;Linux，是一种免费使用和自由传播的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%B1%BBUNIX/9032872">类UNIX</a>操作系统，其内核由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%9E%97%E7%BA%B3%E6%96%AF%C2%B7%E6%9C%AC%E7%BA%B3%E7%AC%AC%E5%85%8B%E7%89%B9%C2%B7%E6%89%98%E7%93%A6%E5%85%B9/1034429">林纳斯·本纳第克特·托瓦兹</a>于1991年10月5日首次发布，它主要受到<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Minix/7106045">Minix</a>和Unix思想的启发，是一个基于<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/POSIX">POSIX</a>的多用户、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E4%BB%BB%E5%8A%A1/1011764">多任务</a>、支持<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E7%BA%BF%E7%A8%8B/1190404">多线程</a>和多<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CPU">CPU</a>的操作系统。它能运行主要的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Unix/219943">Unix</a>工具软件、应用程序和网络协议。它支持<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/32%E4%BD%8D/5812218">32位</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/64%E4%BD%8D">64位</a>硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。Linux有上百种不同的发行版，如基于社区开发的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/debian/748667">debian</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/archlinux/10857530">archlinux</a>，和基于商业开发的[Red Hat Enterprise Linux](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Red">https://baike.baidu.com/item/Red</a> Hat Enterprise Linux&#x2F;10770503)、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/SUSE/60409">SUSE</a>、[Oracle Linux](<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Oracle">https://baike.baidu.com/item/Oracle</a> Linux&#x2F;6876458)等。</p>
+<h3 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h3><ul>
+<li><p><strong>基本思想</strong></p>
+<p>Linux的基本思想有两点：第一，一切都是文件；第二，每个文件都有确定的用途。其中第一条详细来讲就是系统中的所有都归结为一个文件，包括<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%91%BD%E4%BB%A4">命令</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A1%AC%E4%BB%B6">硬件</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6/12053">软件</a>设备、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/192">操作系统</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BF%9B%E7%A8%8B">进程</a>等等对于操作系统<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%86%85%E6%A0%B8">内核</a>而言，都被视为拥有各自特性或类型的文件。至于说Linux是基于Unix的，很大程度上也是因为这两者的基本思想十分相近。</p>
+</li>
+<li><p><strong>完全免费</strong></p>
+<p>Linux是一款免费的操作系统，用户可以通过网络或其他途径免费获得，并可以任意修改其<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%BA%90%E4%BB%A3%E7%A0%81/3969">源代码</a>。这是其他的操作系统所做不到的。正是由于这一点，来自全世界的无数<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F%E5%91%98/62748">程序员</a>参与了Linux的修改、编写工作，程序员可以根据自己的兴趣和灵感对其进行改变，这让Linux吸收了无数程序员的精华，不断壮大。</p>
+</li>
+<li><p><strong>完全兼容POSIX1.0标准</strong></p>
+<p>这使得可以在Linux下通过相应的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%A8%A1%E6%8B%9F%E5%99%A8">模拟器</a>运行常见的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/DOS/32025">DOS</a>、Windows的程序。这为用户从Windows转到Linux奠定了基础。许多用户在考虑使用Linux时，就想到以前在Windows下常见的程序是否能正常运行，这一点就消除了他们的疑虑。</p>
+</li>
+<li><p><strong>多用户、多任务</strong></p>
+<p>Linux支持多用户，各个用户对于自己的文件设备有自己特殊的权利，保证了各用户之间互不影响。<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%A4%9A%E4%BB%BB%E5%8A%A1">多任务</a>则是现代电脑最主要的一个特点，Linux可以使多个程序同时并独立地运行。</p>
+</li>
+<li><p><strong>良好的界面</strong></p>
+<p>Linux同时具有字符界面和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BE%E5%BD%A2%E7%95%8C%E9%9D%A2/8146283">图形界面</a>。在字符界面用户可以通过键盘输入相应的指令来进行操作。它同时也提供了类似Windows图形界面的X-Window系统，用户可以使用鼠标对其进行操作。在X-Window环境中就和在Windows中相似，可以说是一个Linux版的Windows。</p>
+</li>
+<li><p><strong>支持多种平台</strong></p>
+<p>Linux可以运行在多种硬件平台上，如具有<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/x86/6150538">x86</a>、680x0、SPARC、Alpha等处理器的平台。此外Linux还是一种嵌入式操作系统，可以运行在掌上电脑、机顶盒或游戏机上。2001年1月份发布的Linux 2.4版内核已经能够完全支持<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Intel/125450">Intel</a>64位芯片架构。同时Linux也支持多处理器技术。多个处理器同时工作，使系统性能大大提高。</p>
+</li>
+</ul>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li><p>Linux由众多微内核组成，其源代码完全开源；</p>
+</li>
+<li><p>Linux继承了<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/Unix/219943">Unix</a>的特性，具有非常强大的网络功能，其支持所有的因特网协议，包括TCP&#x2F;<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/IPv4/422599">IPv4</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/TCP/33012">TCP</a>&#x2F;IPv6和链路层拓扑程序等，且可以利用Unix的网络特性开发出新的协议栈；</p>
+</li>
+<li><p>Linux系统工具链完整，简单操作就可以配置出合适的开发环境，可以简化开发过程，减少开发中仿真工具的障碍，使<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%B3%BB%E7%BB%9F/479832">系统</a>具有较强的移植性；</p>
+</li>
+</ol>
+<h3 id="Linux内核版本"><a href="#Linux内核版本" class="headerlink" title="Linux内核版本"></a>Linux内核版本</h3><p>内核(kernel)是系统的心脏，是运行程序和管理像磁盘和打印机等硬件设备的核心程序，它提供了一个在裸设备与应用程序间的抽象层。</p>
+<p>Linux内核版本又分为稳定版和开发版，两种版本是相互关联，相互循环：</p>
+<ul>
+<li><p>稳定版：</p>
+<p>具有工业级强度，可以广泛地应用和部署。新的稳定版相对于较旧的只是修正一些bug或加入一些新的驱动程序。</p>
+</li>
+<li><p>开发版：</p>
+<p>由于要试验各种解决方案，所以变化很快。</p>
+<p>内核源码网址：<a target="_blank" rel="noopener" href="http://www.kernel.org/">http://www.kernel.org</a> 所有来自全世界的对Linux源码的修改最终都会汇总到这个网站，由Linus领导的开源社区对其进行甄别和修改最终决定是否进入到Linux主线内核源码中。</p>
+</li>
+</ul>
+<h3 id="Linux发行版本"><a href="#Linux发行版本" class="headerlink" title="Linux发行版本"></a>Linux发行版本</h3><p>Linux发行版 (也被叫做 GNU&#x2F;Linux 发行版) 通常包含了包括桌面环境、办公套件、媒体播放器、数据库等应用软件。</p>
+<p>目前市面上较知名的发行版有：Ubuntu、RedHat、CentOS、Debian、Fedora、SuSE、OpenSUSE、Arch Linux、SolusOS 等。</p>
+<h3 id="Linux与Windows的区别"><a href="#Linux与Windows的区别" class="headerlink" title="Linux与Windows的区别"></a>Linux与Windows的区别</h3><ul>
+<li><p>Linux区分大小写，Windows在DOS界面命令下不区分大小写</p>
+</li>
+<li><p>文件系统区别</p>
+<p>在 Windows 下，打开 “计算机”，我们看到的是一个个的驱动器盘符：</p>
+</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/04/28/kSVhvgiKcWRCmYX.png" alt="image-20220428092049606"></p>
+<p>​	每个驱动器都有自己的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%A0%B9%E7%9B%AE%E5%BD%95&spm=1001.2101.3001.7020">根目录</a>结构</p>
+<p>​	<img src="https://s2.loli.net/2022/04/28/sD6YBLMpgwV3aoZ.png" alt="在这里插入图片描述"></p>
+<ul>
+<li>在 Linux 下，我们是看不到这些驱动器盘符，我们看到的是文件夹（目录）：<br>linux没有盘符这个概念，只有一个根目录 &#x2F;，所有文件都在它下面</li>
+</ul>
+<p><img src="https://s2.loli.net/2022/04/28/1bzfwZLSVpdJMHq.png" alt="在这里插入图片描述"></p>
+<ul>
+<li><p>Linux所有内容均以文件形式保存包括硬件，用户。Windows文件和硬件没有关系，两个之间没有关联</p>
+</li>
+<li><p>Windows用扩展名区分文件如.exe代表执行文件，.txt代表文本文件，而Linux无扩展名，为了管理员区分会有部分扩展</p>
+</li>
+<li><p>windows平台:数量和质量的优势，不过大部分为收费软件；由微软官方提供重要支持和服务 。</p>
+<p>linux平台：大都为开源自由软件，用户可以修改定制和再发布，由于基本免费没有资金支持，部分软件质量和体验欠缺；有全球所有的Linux开发者和自由软件社区提供支持。</p>
+</li>
+<li><p>windows下的.exe文件不能直接在linux下安装与运行，同时linux大部分是字符界面，大大增加了linux系统的安全性，减少了木马攻击的可能性，同时linux字符界面占用的系统资源要小于windows下的图形界面所占的资源。</p>
+</li>
+</ul>
+<h2 id="文件目录介绍"><a href="#文件目录介绍" class="headerlink" title="文件目录介绍"></a>文件目录介绍</h2><ul>
+<li><p><code>/</code>：</p>
+<p>根目录，一般根目录下只存放目录，在Linux下有且只有一个根目录。</p>
+</li>
+<li><p><code>/bin</code>：</p>
+<p>&#x2F;user&#x2F;bin：可执行二进制文件的目录，如常用的命令ls、tar、mv、cat等</p>
+</li>
+<li><p><code>/boot</code>：</p>
+<p>放置Linux系统启动时用的一些文件，如Linux的内核文件：&#x2F;boot&#x2F;vmlinuz，系统引导管理器：&#x2F;boot&#x2F;grub</p>
+</li>
+<li><p><code>/dev</code>：</p>
+<p>存放在Linux系统下的设备文件，访问该目录下某个文件，相当于访问某个设备，通常是挂载光驱</p>
+</li>
+<li><p><code>/etc</code>：</p>
+<p>系统配置文件存放的目录</p>
+</li>
+<li><p><code>/home</code>：</p>
+<p>系统默认的用户家目录，新增用户账号时，用户的家目录都存放在此目录下，表示当前用户的家目录，edu表示用户edu的家目录</p>
+</li>
+<li><p><code>/lib</code>：</p>
+<p>&#x2F;usr&#x2F;lib：&#x2F;usr&#x2F;local&#x2F;lib：系统使用的函数库目录。程序在执行过程中，需要调用一些额外的参数时需要函数库的协助</p>
+</li>
+<li><p><code>/lost+fount</code>：</p>
+<p>系统异常产生错误时，会将一些遗失的片段放置于此目录下</p>
+</li>
+<li><p><code>/mnt</code>：<code>/media</code>：</p>
+<p>光盘默认挂载点，通常光盘挂载于&#x2F;mnt&#x2F;cdrom下</p>
+</li>
+<li><p><code>/opt</code>：</p>
+<p>给主机额外安装软件所摆放的目录</p>
+</li>
+<li><p><code>/proc</code>：</p>
+<p>此目录的数据都在内存中，如系统核心，外部设备，网络状态，由于数据都存放于内存中，所以不占用磁盘空间，比较重要的目录有&#x2F;proc&#x2F;cpuinfo、&#x2F;proc&#x2F;interrupts、&#x2F;proc&#x2F;dma、&#x2F;proc&#x2F;ioports、&#x2F;proc&#x2F;net&#x2F;* 等。</p>
+</li>
+<li><p><code>/root</code>：</p>
+<p>系统管理员root的家目录。</p>
+</li>
+<li><p><code>/sbin</code>:</p>
+<p>&#x2F;usr&#x2F;sbin: &#x2F;usr&#x2F;local&#x2F;sbin：放置系统管理员使用的可执行命令，如fdisk、shutdown、mount 等。与 &#x2F;bin 不同的是，这几个目录是给系统管理员 root使用的命令，一般用户只能”查看”而不能设置和使用。</p>
+</li>
+<li><p><code>/tmp</code>：</p>
+<p>一般用户或正在执行的程序临时存放文件的目录，任何人都可以访问，重要数据不可放置在此目录下。</p>
+</li>
+<li><p><code>/srv</code>：</p>
+<p>服务启动之后需要访问的数据目录，如 www 服务需要访问的网页数据存放在 &#x2F;srv&#x2F;www 内。</p>
+</li>
+<li><p><code>/usr</code>：</p>
+<p>应用程序存放目录，&#x2F;usr&#x2F;bin 存放应用程序，&#x2F;usr&#x2F;share 存放共享数据，&#x2F;usr&#x2F;lib 存放不能直接运行的，却是许多程序运行所必需的一些函数库文件。&#x2F;usr&#x2F;local: 存放软件升级包。&#x2F;usr&#x2F;share&#x2F;doc: 系统说明文件存放目录。&#x2F;usr&#x2F;share&#x2F;man: 程序说明文件存放目录。</p>
+</li>
+</ul>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="ifconfig"><a href="#ifconfig" class="headerlink" title="ifconfig"></a>ifconfig</h3><h4 id="功能描述"><a href="#功能描述" class="headerlink" title="功能描述"></a>功能描述</h4><p><strong>显示所有网络接口的配置信息</strong></p>
+<p><img src="https://s2.loli.net/2022/04/28/bxmeGzkOusJoAla.png" alt="image-20220428095340862"></p>
+<p><code>eth33</code> 表示第一块网卡，其中<code>HWaddr</code>表示网卡的物理地址，可以看到目前这个网卡的物理地址(<code>MAC地址</code>）是<code>00:0c:29:0a:42:cd</code>。</p>
+<p><code>inet </code> 用来表示网卡的IP地址，此网卡的IP地址是<code>192.168.205.128</code>，广播地址Broadcast是<code>192.168.205.255</code>，掩码地址<code>Mask:255.255.255.0</code>。</p>
+<p><code>lo</code>是表示主机的回坏地址，这个一般是用来测试一个网络程序，但又不想让局域网或外网的用户能够查看，只能在此台主机上运行和查看所用的网络接口。比如把 httpd服务器的指定到回坏地址，在浏览器输入127.0.0.1就能看到你所架WEB网站了。但只是您能看得到，局域网的其它主机或用户无从知道。</p>
+<ul>
+<li>第一行：连接类型：Ethernet（以太网）HWaddr（硬件mac地址）。</li>
+<li>第二行：网卡的IP地址、子网、掩码。</li>
+<li>第三行：UP（代表网卡开启状态）RUNNING（代表网卡的网线被接上）MULTICAST（支持组播）MTU:1500（最大传输单元）：1500字节。</li>
+<li>第四、五行：接收、发送数据包情况统计。</li>
+<li>第七行：接收、发送数据字节数统计信息。</li>
+</ul>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig [网卡名称] [参数]</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">add&lt;地址&gt;</td>
+<td align="center">设置IPv6地址</td>
+</tr>
+<tr>
+<td align="center">del&lt;地址&gt;</td>
+<td align="center">删除IPv6地址</td>
+</tr>
+<tr>
+<td align="center">down</td>
+<td align="center">关闭指定网卡</td>
+</tr>
+<tr>
+<td align="center">up</td>
+<td align="center">启动指定网卡</td>
+</tr>
+<tr>
+<td align="center">netmask&lt;地址&gt;</td>
+<td align="center">配置子网掩码</td>
+</tr>
+<tr>
+<td align="center">设备名称</td>
+<td align="center">设置网卡名称</td>
+</tr>
+<tr>
+<td align="center">IP地址</td>
+<td align="center">配置IP地址</td>
+</tr>
+<tr>
+<td align="center">-a</td>
+<td align="center">显示所有配置的网络接口，不论是否激活</td>
+</tr>
+<tr>
+<td align="center">broadcast</td>
+<td align="center">配置网关</td>
+</tr>
+<tr>
+<td align="center">-promisc</td>
+<td align="center">关闭或启动指定网络设备的promiscuous模式</td>
+</tr>
+</tbody></table>
+<h4 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h4><ul>
+<li><p>启动关闭指定网卡：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 up	#开启ens33网卡</span><br><span class="line">ifconfig ens33 down 	#关闭网卡</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示所有配置的网络接口，不论是否激活</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示指定网卡的相关信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置网卡成混杂模式以嗅探数据包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 promisc </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>网卡配置和删除IPv6地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 add 33ffe:3240:800:1005::2/64	#为网卡ens33配置IPv6地址</span><br><span class="line">ifconfig ens33 del 33ffe:3240:800:1005::2/64	#为网卡ens33删除IPv6地址</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ifconfig修改MAC地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 hw ether 00:AA:BB:CC:dd:EE</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置IP地址</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ifconfig ens33 192.168.1.1	#配置ens33的IP地址为192.168.1.1</span><br><span class="line">ifconfig ens33 192.168.1.1 netmask 255.255.255.0	#配置ens33的IP地址为192.168.1.1，子网掩码为255.255.255.0</span><br><span class="line">ifconfig ens33 192.168.1.1 netmask 255.255.255.0 broadcast 192.168.1.255	#配置ens33的IP地址为192.168.1.1，子网掩码为255.255.255.0，网关为192.168.1.255知识补充</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="知识补充–MAC地址"><a href="#知识补充–MAC地址" class="headerlink" title="知识补充–MAC地址"></a>知识补充–MAC地址</h4><blockquote>
+<p>MAC地址（英语：Media Access Control Address），直译为媒体存取控制位址，也称为局域网地址（LAN Address），MAC位址，以太网地址（Ethernet Address）或物理地址（Physical Address），它是一个用来确认网络设备位置的位址。MAC地址也叫物理地址、硬件地址，由网络设备制造商生产时烧录在网卡(Network lnterface Card)的EPROM(一种闪存芯片，通常可以通过程序擦写)。IP地址与MAC地址在计算机里都是以二进制表示的，IP地址是32位的，而MAC地址则是48位的 。</p>
+</blockquote>
+<h3 id="ping"><a href="#ping" class="headerlink" title="ping"></a>ping</h3><h4 id="功能描述："><a href="#功能描述：" class="headerlink" title="功能描述："></a>功能描述：</h4><p><strong>测试当前服务器是否可以连接目的主机</strong></p>
+<p><img src="https://s2.loli.net/2022/04/28/5YqGKtc1zMZ2uEp.png" alt="image-20220428095456887"></p>
+<h4 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping [参数] [主机名或IP地址]</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="参数："><a href="#参数：" class="headerlink" title="参数："></a>参数：</h4><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-c</td>
+<td align="center">为发送ping包的数量,到达数量后停止发送</td>
+</tr>
+<tr>
+<td align="center">-s</td>
+<td align="center">字节数：指定发送的数据字节数，预设值是56，加上8字节的ICMP头，一共是64ICMP数据字节</td>
+</tr>
+<tr>
+<td align="center">-q</td>
+<td align="center">只显示最后的结果</td>
+</tr>
+<tr>
+<td align="center">-t</td>
+<td align="center">存活数值：设置存活数值TTL的大小</td>
+</tr>
+<tr>
+<td align="center">-i</td>
+<td align="center">设定间隔几秒送一个网络封包给一台机器，预设值是一秒送一次。</td>
+</tr>
+</tbody></table>
+<h4 id="具体使用-1"><a href="#具体使用-1" class="headerlink" title="具体使用"></a>具体使用</h4><ul>
+<li><p>测试主机的连通性</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping IP地址或主机</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试与网关的连通性</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -b 网关地址</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定ping的次数</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c 次数 IP地址或网关</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ping 设置时间间隔和次数限制</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -c 次数 -i 时间 IP地址或者主机名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过域名ping公网的IP</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping 域名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hjl@hjl-virtual-machine:~$ ping -c 5  baidu.com</span><br><span class="line">PING baidu.com (220.181.38.148) 56(84) bytes of data.</span><br><span class="line">64 字节，来自 220.181.38.148 (220.181.38.148): icmp_seq=1 ttl=128 时间=39.8 毫秒</span><br><span class="line">64 字节，来自 220.181.38.148 (220.181.38.148): icmp_seq=2 ttl=128 时间=39.3 毫秒</span><br><span class="line">64 字节，来自 220.181.38.148 (220.181.38.148): icmp_seq=3 ttl=128 时间=40.7 毫秒</span><br><span class="line">64 字节，来自 220.181.38.148 (220.181.38.148): icmp_seq=4 ttl=128 时间=39.7 毫秒</span><br><span class="line">64 字节，来自 220.181.38.148 (220.181.38.148): icmp_seq=5 ttl=128 时间=39.9 毫秒</span><br></pre></td></tr></table></figure>
+
+<p>从上方的结果可以看出baidu.com这个域名的公网地址为220.181.38.148</p>
+</li>
+</ul>
+<h4 id="知识补充–Ping"><a href="#知识补充–Ping" class="headerlink" title="知识补充–Ping"></a>知识补充–Ping</h4><blockquote>
+<p>ICMP协议是“Internet Control Message Protocol”（因特网控制消息协议）的缩写。它是TCP&#x2F;IP协议族的一个子协议，用于在IP主机、路由器之间传递控制消息。</p>
+<p>ping (Packet Internet Groper)，因特网包探索器，用于测试网络连接量的程序。Ping发送一个ICMP；回声请求消息给目的地并报告是否收到所希望的ICMP echo （ICMP回声应答）。它是用来检查网络是否通畅或者网络连接速度的命令</p>
+<p>ping命令通常用来作为网络可用性的检查。ping命令可以对一个网络地址发送测试数据包，看该网络地址是否有响应并统计响应时间，以此测试网络。</p>
+<p>ping和ICMP的关系：ping命令发送数据使用的是ICMP协议。</p>
+</blockquote>
+<blockquote>
+<p>ping的原理：<br>向指定的网络地址发送一定长度的数据包，按照约定，若指定网络地址存在的话，会返回同样大小的数据包，当然，若在特定时间内没有返回，就是“超时”，会被认为指定的网络地址不存在。ICMP协议通过IP协议发送的，IP协议是一种无连接的，不可靠的数据包协议。在Unix&#x2F;Linux,序号从0开始计数，依次递增。而Windows ping程序的ICMP序列号是没有规律。ICMP协议在实际传输中数据包：20字节IP首部 + 8字节ICMP首部 + 1472字节&lt;数据大小&gt;38字节。ICMP报文格式：IP首部（20字节） + 8位类型 + 8位代码 + 16校验和 + （不同类型和代码，格式也有所不同）。</p>
+</blockquote>
+<h3 id="修改IP地址"><a href="#修改IP地址" class="headerlink" title="修改IP地址"></a>修改IP地址</h3><h4 id="IP配置文件位置"><a href="#IP配置文件位置" class="headerlink" title="IP配置文件位置"></a>IP配置文件位置</h4><p><code>/etc/sysconfig/network-scripts/ifcfg-ens33</code></p>
+<h4 id="进入配置文件"><a href="#进入配置文件" class="headerlink" title="进入配置文件"></a>进入配置文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<h4 id="解析配置文件内容"><a href="#解析配置文件内容" class="headerlink" title="解析配置文件内容"></a>解析配置文件内容</h4><p>在&#x2F;etc&#x2F;sysconfig&#x2F;network-scripts对网卡的配置文件进行永久性配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet     		 <span class="comment">#网络类型 以太网</span></span><br><span class="line">	BOOTPROTO=static </span><br><span class="line">       <span class="comment">#1.这里可以为=none(过指定方式的办法来获得地址，如果没有指定的话可能会出现各种各样的网络受限 )</span></span><br><span class="line">       <span class="comment">#2.=dhcp 自动获取ip地址</span></span><br><span class="line">       <span class="comment">#3.=static  固定ip地址</span></span><br><span class="line">    DEFROUTE=<span class="built_in">yes</span>	<span class="comment">#是否设置默认路由</span></span><br><span class="line">    PEERDNS=<span class="built_in">yes</span>		</span><br><span class="line">    PEERROUTES=<span class="built_in">yes</span></span><br><span class="line">    IPV4_FAILURE_FATAL=no</span><br><span class="line">    IPV6INIT=<span class="built_in">yes</span></span><br><span class="line">    IPV6_AUTOCONF=<span class="built_in">yes</span></span><br><span class="line">    IPV6_DEFROUTE=<span class="built_in">yes</span></span><br><span class="line">    IPV6_PEERDNS=<span class="built_in">yes</span></span><br><span class="line">    IPV6_PEERROUTES=<span class="built_in">yes</span></span><br><span class="line">    IPV6_FAILURE_FATAL=no</span><br><span class="line">    NAME=ens33     <span class="comment">#网卡名称(用户看到的网卡名)</span></span><br><span class="line">    UUID=858e2bc3-1b47-4660-9297-b0029c8cac56 <span class="comment">#网卡的唯一标识符</span></span><br><span class="line">    DEVICE=eth0      <span class="comment">#系统逻辑设备名</span></span><br><span class="line">    ONBOOT=<span class="built_in">yes</span> <span class="comment">#是否开机自启网卡 选项(no/yes)centos7默认no</span></span><br><span class="line">    IPADDR=192.168.1.3       <span class="comment">#指定的ip地址 如果你是dhcp这里是没有的</span></span><br><span class="line">    NETMASK=255.255.255.0    <span class="comment">#子网掩码</span></span><br><span class="line">    GATEWAY=192.168.1.2      <span class="comment">#网关 </span></span><br><span class="line">    DNS1=114.114.114.114     <span class="comment">#指定的第一个DNS服务器</span></span><br></pre></td></tr></table></figure>
+
+<p>编辑完后，按键盘 <code>esc</code> ，然后输入 <code>:wq</code> 回车即可</p>
+<p>执行 <code>service network restart</code> 重启网络</p>
+<h4 id="知识补充–eth和ens的区别"><a href="#知识补充–eth和ens的区别" class="headerlink" title="知识补充–eth和ens的区别"></a>知识补充–eth和ens的区别</h4><p>一个是真实物理网卡，一个是虚拟网络会话，两者之间的关系就是一个真实物理网卡上可以绑定多个虚拟网络会话。eth0是真实物理网卡，ens33是虚拟网络会话。</p>
+<blockquote>
+<p>修改 IP 地址后可能会遇到的问题：</p>
+<ol>
+<li>物理机能 ping 通虚拟机，但是虚拟机 ping 不通物理机,一般都是因为物理机的 防火墙问题,把防火墙关闭就行</li>
+<li>虚拟机能 Ping 通物理机,但是虚拟机 Ping 不通外网,一般都是因为 DNS 的设置有问题</li>
+<li>虚拟机 Ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 显示域名未知等信息,一般查看 GATEWAY 和 DNS 设 置是否正确</li>
+<li>如果以上全部设置完还是不行，需要关闭 NetworkManager 服务</li>
+<li>systemctl stop NetworkManager 关闭</li>
+<li>systemctl disable NetworkManager 禁用</li>
+<li>如果检查发现 systemctl status network 有问题 需要检查 ifcfg-ens33</li>
+</ol>
+</blockquote>
+<h3 id="主机名称"><a href="#主机名称" class="headerlink" title="主机名称"></a>主机名称</h3><h4 id="查看当前服务器主机名称"><a href="#查看当前服务器主机名称" class="headerlink" title="查看当前服务器主机名称"></a>查看当前服务器主机名称</h4><p>命令提示符中可以看到主机名，主机名通常位于“@”符号后</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hjl@hjl-virtual-machine:~$</span><br><span class="line">主机名为：hjl-virtual-machine</span><br></pre></td></tr></table></figure>
+
+<p>命令查询</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostname</span><br><span class="line">uname -n</span><br></pre></td></tr></table></figure>
+
+<h4 id="临时修改主机名"><a href="#临时修改主机名" class="headerlink" title="临时修改主机名"></a>临时修改主机名</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hostname 新主机名</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>“新主机名”可以用任何合法字符串来表示。不过采用这种方式，新主机名并不保存在系统中，重启系统后主机名将恢复为原先的主机名称。终端下不会立即显示生效后的主机名，重开一个终端窗口(通过ssh连接的终端需要重新连接才可以)。</p>
+</blockquote>
+<h4 id="永久修改主机名"><a href="#永久修改主机名" class="headerlink" title="永久修改主机名"></a>永久修改主机名</h4><p>主机名存放在<code>/etc/hostname</code>文件中，修改主机名时，编辑hostname文件，在文件中输入新的主机名并保存该文件即可。<code>修改完成后重启生效</code></p>
+<blockquote>
+<p>值的指出的是，在其它<a target="_blank" rel="noopener" href="http://lib.csdn.net/base/linux">Linux</a>发行版中，并非都存在&#x2F;etc&#x2F;hostname文件。如Fedora发行版将主机名存放在&#x2F;etc&#x2F;sysconfig&#x2F;network文件中。所以，修改主机名时应注意区分是哪种<a target="_blank" rel="noopener" href="http://lib.csdn.net/base/linux">linux</a>发行版。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hostname</span><br></pre></td></tr></table></figure>
+
+<h3 id="hosts映射"><a href="#hosts映射" class="headerlink" title="hosts映射"></a>hosts映射</h3><p>hosts文件存放在<code>etc/hosts</code>文件中，通过修改该文件可以修改hosts映射。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/hosts</span><br></pre></td></tr></table></figure>
+
+<p>hosts文件内容如下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1       localhost</span><br><span class="line">127.0.1.1       hjl-virtual-machine</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">添加hosts映射</span></span><br><span class="line">192.168.1.1	    localhost</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">修改格式</span></span><br><span class="line">IP地址	主机名</span><br></pre></td></tr></table></figure>
+
+<h4 id="知识补充–hosts文件"><a href="#知识补充–hosts文件" class="headerlink" title="知识补充–hosts文件"></a>知识补充–hosts文件</h4><p>hosts是一个文本文件，用来记录IP和hostname（主机名）的映射关系</p>
+<h3 id="远程登陆–ssh"><a href="#远程登陆–ssh" class="headerlink" title="远程登陆–ssh"></a>远程登陆–ssh</h3><blockquote>
+<p>Secure Shell(SSH) 是由 IETF(The Internet Engineering Task Force) 制定的建立在应用层基础上的安全网络协议。它是专为远程登录会话(甚至可以用Windows远程登录Linux服务器进行文件互传)和其他网络服务提供安全性的协议，可有效弥补网络中的漏洞。通过SSH，可以把所有传输的数据进行加密，也能够防止DNS欺骗和IP欺骗。还有一个额外的好处就是传输的数据是经过压缩的，所以可以加快传输的速度。目前已经成为Linux系统的标准配置。</p>
+</blockquote>
+<h4 id="安装ssh服务"><a href="#安装ssh服务" class="headerlink" title="安装ssh服务"></a>安装ssh服务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ssh</span><br></pre></td></tr></table></figure>
+
+<p>通常在工作过程中，公司中使用的真实服务器或者是云服务器，都不允许除运维人员之外的员工直接接触，因此就需要通过远程登录的方式来操作。</p>
+<p>所以，远程登录工具就是必不可缺的，目前，比较主流的有 Xshell, SSH Secure Shell, SecureCRT,FinalShell 等，可以根据自己的习惯自行选择。</p>
+<blockquote>
+<p>下载地址:(建议使用IDM下载)</p>
+<p>IDM：<a target="_blank" rel="noopener" href="http://yun.hjdragon.xyz/%E8%BD%AF%E4%BB%B6/IDM.7z">http://yun.hjdragon.xyz/%E8%BD%AF%E4%BB%B6/IDM.7z</a></p>
+<p>FinalShell：<a target="_blank" rel="noopener" href="http://yun.hjdragon.xyz/%E8%BD%AF%E4%BB%B6/FinalShell.7z">http://yun.hjdragon.xyz/%E8%BD%AF%E4%BB%B6/FinalShell.7z</a></p>
+<p>Xshell：<a target="_blank" rel="noopener" href="http://yun.hjdragon.xyz/%E8%BD%AF%E4%BB%B6/Xshell-7.0.0090.exe">http://yun.hjdragon.xyz/%E8%BD%AF%E4%BB%B6/Xshell-7.0.0090.exe</a></p>
+</blockquote>
+<h2 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h2><h3 id="Linux中的进程和服务"><a href="#Linux中的进程和服务" class="headerlink" title="Linux中的进程和服务"></a>Linux中的进程和服务</h3><ul>
+<li><p>计算机中，一个正在执行的程序或命令，被叫做“进程”（process）</p>
+</li>
+<li><p>启动之后一直存在、常驻内存的进程，一般被称作“服务”（service）</p>
+</li>
+</ul>
+<h4 id="进程管理–ps"><a href="#进程管理–ps" class="headerlink" title="进程管理–ps"></a>进程管理–ps</h4><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><p>Linux 中的 <strong>ps</strong> 命令是 <strong>Process Status</strong> 的缩写。ps 命令用来列出系统中 <strong>当前<strong><strong>正在</strong></strong>运行</strong> 的那些进程，<strong>就是执行 ps 命令的那个时刻的那些进程<strong><strong>的快照</strong></strong>。</strong>使用该命令可以确定有哪些进程 正在运行 和 运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等。总之大部分信息都是可以通过执行该命令得到的。</p>
+<h5 id="Linux上进程有五种状态"><a href="#Linux上进程有五种状态" class="headerlink" title="Linux上进程有五种状态"></a>Linux上进程有五种状态</h5><blockquote>
+<p>1.运行        ( 正在运行或在运行队列中等待 )  </p>
+<p>2.中断        ( 休眠中, 受阻, 在等待某个条件的形成或接受到信号 ) </p>
+<p>3.不可中断    ( 收到信号不唤醒和不可运行, 进程必须等待直到有中断发生 )  </p>
+<p>4.僵死        ( 进程已终止, 但进程描述符存在, 直到父进程调用wait4()系统调用后释放 )  </p>
+<p>5.停止        ( 进程收到SIGSTOP, SIGSTP, SIGTIN, SIGTOU信号后停止运行运行 ) </p>
+</blockquote>
+<h5 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h5><p>1.图形化</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gnome-system-monitor	#图形化查看进程</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://s2.loli.net/2022/04/28/zKSI8WfwFioyne7.png" alt="image-20220428141215658"></p>
+<p>2.使用命令ps</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps	#进程查看命令</span><br></pre></td></tr></table></figure>
+
+<p>参数</p>
+<table>
+<thead>
+<tr>
+<th align="center">-A</th>
+<th align="center">显示所有进程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-a</td>
+<td align="center">显示一个终端的所有进程，除了会话引线</td>
+</tr>
+<tr>
+<td align="center">-N</td>
+<td align="center">忽略选择</td>
+</tr>
+<tr>
+<td align="center">-d</td>
+<td align="center">显示所有进程，但忽略所有的会话引线</td>
+</tr>
+<tr>
+<td align="center">-p</td>
+<td align="center">pid进程使用CPU的时间</td>
+</tr>
+<tr>
+<td align="center">-u</td>
+<td align="center">选择有效的用户ID或者是用户名</td>
+</tr>
+<tr>
+<td align="center">-g</td>
+<td align="center">显示组的所有进程</td>
+</tr>
+<tr>
+<td align="center">-m</td>
+<td align="center">显示所有线程</td>
+</tr>
+</tbody></table>
+<p>ps 命令常用用法（方便查看系统进程）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1）ps a   #显示现行终端机下的所有程序，包括其他用户的程序。</span><br><span class="line">2）ps -A  #显示所有进程。</span><br><span class="line">3）ps c   #列出程序时，显示每个程序真正的指令名称，而不包含路径，参数或常驻服务的标示。</span><br><span class="line">4）ps -e  #此参数的效果和指定&quot;A&quot;参数相同。</span><br><span class="line">5）ps e   #列出程序时，显示每个程序所使用的环境变量。</span><br><span class="line">6）ps f   #用 ASCII 字符显示树状结构，表达程序间的相互关系。</span><br><span class="line">7）ps -H  #显示树状结构，表示程序间的相互关系。</span><br><span class="line">8）ps -N  #显示所有的程序，除了执行ps指令终端机下的程序之外。</span><br><span class="line">9）ps s   #采用程序信号的格式显示程序状况。</span><br><span class="line">10）ps S  #列出程序时，包括已中断的子程序资料。</span><br><span class="line">11）ps -t&lt;终端机编号&gt; 　#指定终端机编号，并列出属于该终端机的程序的状况。</span><br><span class="line">12）ps -u root 　#显示root用户信息</span><br><span class="line">13）ps x 　      #显示所有程序，不以终端机来区分。</span><br></pre></td></tr></table></figure>
+
+<h5 id="进程stat状态"><a href="#进程stat状态" class="headerlink" title="进程stat状态"></a>进程stat状态</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">=========================================进程STAT状态===============================</span><br><span class="line">D     无法中断的休眠状态（通常 IO 的进程）； </span><br><span class="line">R     正在运行，在可中断队列中； </span><br><span class="line">S     处于休眠状态，静止状态； </span><br><span class="line">T     停止或被追踪，暂停执行； </span><br><span class="line">W     进入内存交换（从内核2.6开始无效）； </span><br><span class="line">X     死掉的进程； </span><br><span class="line">Z     僵尸进程不存在但暂时无法消除；</span><br><span class="line">W:    没有足够的记忆体分页可分配</span><br><span class="line">WCHAN 正在等待的进程资源；</span><br><span class="line">&lt;:    高优先级进程</span><br><span class="line">N:    低优先序进程</span><br><span class="line">L:    有记忆体分页分配并锁在记忆体内 (即时系统或捱A I/O)，即,有些页被锁进内存</span><br><span class="line"></span><br><span class="line">s     进程的领导者（在它之下有子进程）； </span><br><span class="line">l     多进程的（使用 CLONE_THREAD, 类似 NPTL pthreads）； </span><br><span class="line">+     位于后台的进程组；</span><br></pre></td></tr></table></figure>
+
+<h4 id="进程管理–kill"><a href="#进程管理–kill" class="headerlink" title="进程管理–kill"></a>进程管理–kill</h4><h5 id="简介-1"><a href="#简介-1" class="headerlink" title="简介"></a>简介</h5><blockquote>
+<p>kill命令用来删除执行中的程序或工作。</p>
+</blockquote>
+<p>kill可将指定的信息送至程序。预设的信息为SIGTERM(15)，可将指定程序终止。若仍无法终止该程序，可使用SIGKILL(9)信息尝试强制删除程序。程序或工作的编号可利用ps指令或job指令查看。</p>
+<h5 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill [选项] 进程号	#通过进程号杀死/终止进程</span><br><span class="line">killall 进程名称	#通过进程名称杀死/终止进程</span><br></pre></td></tr></table></figure>
+
+<h5 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h5><table>
+<thead>
+<tr>
+<th align="center">-a</th>
+<th align="center">当处理当前进程是，不限制命令名和进程号的对应关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-l&lt;信息编号&gt;</td>
+<td align="center">若不加&lt;信息编号&gt;选项，则-l参数会列出全部的信息名称</td>
+</tr>
+<tr>
+<td align="center">-p</td>
+<td align="center">指定kill命令只打印相关进程的进程号，而不发送任何信号</td>
+</tr>
+<tr>
+<td align="center">-s&lt;信息名称或编号&gt;</td>
+<td align="center">指定要送出的信息</td>
+</tr>
+<tr>
+<td align="center">-u</td>
+<td align="center">指定用户</td>
+</tr>
+</tbody></table>
+<h5 id="常用信号"><a href="#常用信号" class="headerlink" title="常用信号"></a>常用信号</h5><table>
+<thead>
+<tr>
+<th align="center">HUP</th>
+<th align="center">1</th>
+<th align="center">终端断线</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">INT</td>
+<td align="center">2</td>
+<td align="center">中断（同Ctrl+C）</td>
+</tr>
+<tr>
+<td align="center">QUIT</td>
+<td align="center">3</td>
+<td align="center">退出（同Ctrl+\）</td>
+</tr>
+<tr>
+<td align="center">TERM</td>
+<td align="center">15</td>
+<td align="center">终止（默认kill）</td>
+</tr>
+<tr>
+<td align="center">KILL</td>
+<td align="center">9</td>
+<td align="center">强制终止</td>
+</tr>
+<tr>
+<td align="center">CONT</td>
+<td align="center">18</td>
+<td align="center">继续（与STOP相反，fg&#x2F;bg命令）</td>
+</tr>
+<tr>
+<td align="center">STOP</td>
+<td align="center">19</td>
+<td align="center">暂停（同Ctrl+Z）</td>
+</tr>
+</tbody></table>
+<h5 id="kill-15"><a href="#kill-15" class="headerlink" title="kill -15"></a>kill -15</h5><p>系统会发送一个SIGTERM的信号给对应的程序。当程序接收到该signal后，将会发生以下的事情：</p>
+<p>程序立刻停止；<br>当程序释放相应资源后再停止；<br>程序可能仍然继续运行；<br>大部分程序接收到SIGTERM信号后，会先释放自己的资源，然后在停止。但是也有程序可以在接受到信号量后，做一些其他的事情，并且这些事情是可以配置的。如果程序正在等待IO，可能就不会立马做出相应。也就是说，SIGTERM多半是会被阻塞的、忽略。</p>
+<h5 id="kill-9"><a href="#kill-9" class="headerlink" title="kill -9"></a>kill -9</h5><p>kill -9 pid等于kill -s 9 pid，表示强制，尽快终止一个进程。多半admin会用这个命令。</p>
+<p>因此kill - 9表示强制杀死该进程；与SIGTERM相比，这个信号不能被捕获或忽略，同时接收这个信号的进程在收到这个信号时不能执行任何清理。</p>
+<h4 id="服务管理–systemctl"><a href="#服务管理–systemctl" class="headerlink" title="服务管理–systemctl"></a>服务管理–systemctl</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start | stop | restart | status 服务名	#启动/关闭/重启/查看服务</span><br></pre></td></tr></table></figure>
+
+<h5 id="具体使用-2"><a href="#具体使用-2" class="headerlink" title="具体使用"></a>具体使用</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld	#启动防火墙</span><br><span class="line">systemctl stop firewalld	#关闭防火墙</span><br><span class="line">systemctl restart firewalld	#重新启动防火墙</span><br><span class="line">systemctl status firewalld	#查看防火墙的状态</span><br></pre></td></tr></table></figure>
+
+<h3 id="systemctl-设置后台服务的自启配置"><a href="#systemctl-设置后台服务的自启配置" class="headerlink" title="systemctl 设置后台服务的自启配置"></a>systemctl 设置后台服务的自启配置</h3><h5 id="查看服务开机启动状态"><a href="#查看服务开机启动状态" class="headerlink" title="查看服务开机启动状态"></a>查看服务开机启动状态</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl list-unit-files</span><br><span class="line">systemctl list-unit-files|grep enabled</span><br></pre></td></tr></table></figure>
+
+<h5 id="关掉指定服务的自动启动"><a href="#关掉指定服务的自动启动" class="headerlink" title="关掉指定服务的自动启动"></a>关掉指定服务的自动启动</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable service_name</span><br></pre></td></tr></table></figure>
+
+<h5 id="开启指定服务的自动启动"><a href="#开启指定服务的自动启动" class="headerlink" title="开启指定服务的自动启动"></a>开启指定服务的自动启动</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable service_name</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看启动失败的服务"><a href="#查看启动失败的服务" class="headerlink" title="查看启动失败的服务"></a>查看启动失败的服务</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl --failed</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看服务是否开机启动"><a href="#查看服务是否开机启动" class="headerlink" title="查看服务是否开机启动"></a>查看服务是否开机启动</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl is-enabled firewalld.service</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>查看服务的方法</p>
+<ol>
+<li>cd &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system</li>
+<li>ls -al</li>
+</ol>
+</blockquote>
+<p><img src="https://s2.loli.net/2022/04/28/f4GCyAZqwWzoMEY.png" alt="image-20220428143546469"></p>
+<h4 id="系统运行级别"><a href="#系统运行级别" class="headerlink" title="系统运行级别"></a>系统运行级别</h4><h5 id="查看当前系统运行级别"><a href="#查看当前系统运行级别" class="headerlink" title="查看当前系统运行级别"></a>查看当前系统运行级别</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">runlevel</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出结果</span></span><br><span class="line">N 5</span><br></pre></td></tr></table></figure>
+
+<p>结果显示第一位是上一次系统运行级别(N表示没有上一次)，第二位表示系统当前运行级别</p>
+<h5 id="Linux系统运行级别"><a href="#Linux系统运行级别" class="headerlink" title="Linux系统运行级别"></a>Linux系统运行级别</h5><table>
+<thead>
+<tr>
+<th align="center">运行级别</th>
+<th align="center">描述</th>
+<th align="center">英文</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">关机模式，系统默认运行级别不能设置为0，否则不能正常启动，一开机就自动关机</td>
+<td align="center">shutdown.target</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">单用户模式，root权限，用于系统维护，禁止远程登录，就像Windows下的安全模式</td>
+<td align="center">emergency.target</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">多用户模式，没有 NFS 网络支持</td>
+<td align="center">rescure.target</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">完整的多用户文本模式，有 NFS，登录后进入控制台命令模式</td>
+<td align="center">multi-user.target</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">系统未使用，保留一般不用</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">图形化模式，登陆后进入图形 GUI 模式</td>
+<td align="center">graphical.target</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">重启模式，默认运行级别不能设为6，否则不能设为6，否则不能正常启动，就会一直开机重启</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h5 id="切换系统运行级别（临时生效，重启失效）"><a href="#切换系统运行级别（临时生效，重启失效）" class="headerlink" title="切换系统运行级别（临时生效，重启失效）"></a>切换系统运行级别（临时生效，重启失效）</h5><h6 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init 0</span><br></pre></td></tr></table></figure>
+
+<h6 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init 6</span><br></pre></td></tr></table></figure>
+
+<p>切换到字符模式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">init 3</span><br></pre></td></tr></table></figure>
+
+<p>切换到图形模式</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">init 5	#需要登陆-切换模式</span><br><span class="line">startx	#不需要登陆-启动软件</span><br></pre></td></tr></table></figure>
+
+<h5 id="切换系统运行级别-永久生效"><a href="#切换系统运行级别-永久生效" class="headerlink" title="切换系统运行级别(永久生效)"></a>切换系统运行级别(永久生效)</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl set-default 级别</span><br></pre></td></tr></table></figure>
+
+<h6 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl set-default multi-user.target	#将系统默认运行级别设置为3</span><br><span class="line">systemctl set-defalut graphical.target	#将系统默认运行级别设置为5</span><br></pre></td></tr></table></figure>
+
+<p>target取 multi-user 或者 graphical</p>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><h4 id="firewalld的基本使用"><a href="#firewalld的基本使用" class="headerlink" title="firewalld的基本使用"></a>firewalld的基本使用</h4><p>启动firewalld</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld</span><br></pre></td></tr></table></figure>
+
+<p>查看firewalld的状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure>
+
+<p>停止firewalld</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<p>禁用firewalld</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置firewalld-cmd"><a href="#配置firewalld-cmd" class="headerlink" title="配置firewalld-cmd"></a>配置firewalld-cmd</h4><p>查看防火墙版本</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewalld-cmd --version</span><br></pre></td></tr></table></figure>
+
+<p>查看帮助</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewalld-cmd --help</span><br></pre></td></tr></table></figure>
+
+<p>显示状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewalld-cmd --status</span><br></pre></td></tr></table></figure>
+
+<p>查看所有打开的端口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --list-ports</span><br></pre></td></tr></table></figure>
+
+<p>更新防火墙策略</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查看区域信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --get-active-zones</span><br></pre></td></tr></table></figure>
+
+<p>查看指定接口所属区域</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --get-zone-of-interface=网卡</span><br></pre></td></tr></table></figure>
+
+<p>拒绝所有包</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --panic-on</span><br></pre></td></tr></table></figure>
+
+<p>取消拒绝状态</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --panic-off</span><br></pre></td></tr></table></figure>
+
+<p>查看是否拒绝</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --query-panic</span><br></pre></td></tr></table></figure>
+
+<h4 id="防火墙策略-firewalld"><a href="#防火墙策略-firewalld" class="headerlink" title="防火墙策略(firewalld)"></a>防火墙策略(firewalld)</h4><h5 id="firewall-config为图形化工具"><a href="#firewall-config为图形化工具" class="headerlink" title="firewall-config为图形化工具"></a>firewall-config为图形化工具</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1.先开启firewalld，关闭iptables</span><br><span class="line">yum search firewalld</span><br><span class="line">systemctl stop iptables</span><br><span class="line">systemctl mask iptables</span><br><span class="line">systemctl start firewalld</span><br><span class="line"></span><br><span class="line">2.使用工具firewall-config改变firewalld默认的域(默认的是public)</span><br><span class="line"> 选择options---&gt;trusted  所有都可以连接我的主机</span><br><span class="line"> 在block中添加不允许连接的主机ip</span><br><span class="line">      </span><br><span class="line"> 选择options---&gt;block  所有都不可以连接我的主机</span><br><span class="line"> 在trusted中添加允许连接的主机ip</span><br><span class="line"></span><br><span class="line">3.端口转发</span><br><span class="line">    选择options----&gt;trusted-----&gt;port forwarding  </span><br><span class="line">       port/port/range :8888</span><br><span class="line">       local forward :80</span><br><span class="line">       masquerading 勾对号</span><br><span class="line">       浏览器中输入172.25.254.133：8888 自动访问80端口</span><br><span class="line"></span><br><span class="line">      也可以设置为自动转到别的主机的端口</span><br><span class="line">        选择options----&gt;trusted-----&gt;port forwarding  </span><br><span class="line">       port/port/range :22</span><br><span class="line">       forward another port :172.25.254.133  22端口</span><br><span class="line">       masquerading 勾对号</span><br><span class="line">      命令行输入ssh root@172.252.254.233 -X </span><br></pre></td></tr></table></figure>
+
+<h4 id="firewall命令工具配置策略"><a href="#firewall命令工具配置策略" class="headerlink" title="firewall命令工具配置策略"></a>firewall命令工具配置策略</h4><p>查看已经添加的策略</p>
+<h6 id="查看已经开放的端口"><a href="#查看已经开放的端口" class="headerlink" title="查看已经开放的端口"></a>查看已经开放的端口</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+
+<h6 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-all</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出结果</span></span><br><span class="line">public (active)</span><br><span class="line">  target: default</span><br><span class="line">  icmp-block-inversion: no</span><br><span class="line">  interfaces: ens33</span><br><span class="line">  sources: </span><br><span class="line">  services: dhcpv6-client ssh</span><br><span class="line">  ports: </span><br><span class="line">  protocols: </span><br><span class="line">  masquerade: no</span><br><span class="line">  forward-ports: </span><br><span class="line">  source-ports: </span><br><span class="line">  icmp-blocks: </span><br><span class="line">  rich rules: </span><br></pre></td></tr></table></figure>
+
+<h5 id="开启-x2F-移除指定协议的端口"><a href="#开启-x2F-移除指定协议的端口" class="headerlink" title="开启&#x2F;移除指定协议的端口"></a>开启&#x2F;移除指定协议的端口</h5><h6 id="开放端口"><a href="#开放端口" class="headerlink" title="开放端口"></a>开放端口</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd  --add-port=端口号/udp --zone=public --permanent</span><br><span class="line">firewall-cmd  --add-port=端口号/tcp --zone=public --permanent</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>–zone&#x3D;public：作用域</p>
+<p>–permanent：永久生效</p>
+</blockquote>
+<h6 id="移除端口"><a href="#移除端口" class="headerlink" title="移除端口"></a>移除端口</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --remove-port=端口号/tcp --permanent</span><br></pre></td></tr></table></figure>
+
+<h5 id="配置IP访问权限"><a href="#配置IP访问权限" class="headerlink" title="配置IP访问权限"></a>配置IP访问权限</h5><h6 id="限制某IP的访问权限"><a href="#限制某IP的访问权限" class="headerlink" title="限制某IP的访问权限"></a>限制某IP的访问权限</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-rich-rule=&quot;rule family=&#x27;ipv4&#x27; source address=&#x27;IP地址&#x27; reject&quot; --permanent</span><br></pre></td></tr></table></figure>
+
+<p>允许某IP的访问权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-rich-rule=&quot;rule family=&#x27;ipv4&#x27; source address=&#x27;IP地址&#x27; accept&quot; --permanent</span><br></pre></td></tr></table></figure>
+
+<p>设置某IP通过某端口协议访问</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule &#x27;rule family=ipv4 source address=IP地址 port port=端口 protocol=$tcp accept&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>设置某IP无法通过某端口协议访问</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --permanent --add-rich-rule &#x27;rule family=ipv4 source address=IP地址 port port=端口 protocol=$tcp reject&#x27;</span><br></pre></td></tr></table></figure>
+
+<h5 id="重启防火墙"><a href="#重启防火墙" class="headerlink" title="重启防火墙"></a>重启防火墙</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<h4 id="防火墙策略-iptable"><a href="#防火墙策略-iptable" class="headerlink" title="防火墙策略(iptable)"></a>防火墙策略(iptable)</h4><h5 id="简介-2"><a href="#简介-2" class="headerlink" title="简介"></a>简介</h5><p>  现代的计算机环境是一个网络的环境，而且是一个非常开放的网络环境，在这个开放的网络环境中，用户可以获得大量的资讯信息，也可以更加轻松地进行社交、学生等。但这个开放的环境也给我们带来了一些不便，在开放的同时，网络中还伴有大量的攻击、发送垃圾邮件、盗号、欺诈等活动。对于IT运维人员而言，如何防止自己的服务器免受攻击？这需要管理员掌握扎实的安全理论基础知识以及专业工具的使用技巧。要防止遭受网络攻击，掌握一种网络访问控制工具的使用是至关重要的，而netfilter&#x2F;iptables 是集成在Linux2.4X版本内核中的包过滤防火墙系统。</p>
+<p>  netfilter&#x2F;iptables 框架可以实现数据包过滤、网络地址转换以及数据包管理功能。Linux中的防火墙系统包括两部分：netfilter&#x2F;iptables。netfilter位于内核空间，目前是Linux内核的组成部分。具体地说，netfilter是Linux内核内部的一系列钩子，这些钩子允许数据表过滤函数挂载到系统内核中。而iptables是用户工具，由于netfilter位于在内核空间中，用户通常接触内核和修改内核，此时就需要一个像iptables这样的命令行工具，使用iptables可以添加、删除具体的过滤规则，iptables默认维护着四个表和五个链，所有的防火墙测落规则都将被分别写入这些表与链中。Linux防火墙因为已经集成在内核中，所以相对于应用层防火墙产品而言，基于内核的Linux防火墙更加快捷、高效。</p>
+<p>  iptables有很好的可扩展性，也就是说，内核架构与iptables工具都可以添加扩展功能，CentOS6.3 系统中防火墙模块存放在&#x2F;lib&#x2F;modules&#x2F;2.6.32-279.e16.x86_64&#x2F;kernel&#x2F;net&#x2F;netfilter 目录下，当需某个模块功能时，可以通过modprobe加载该模块功能。</p>
+<p>  默认的iptables规则表有：filter表（过滤规则表）、nat表（地址转换规则表）、mangle（修改数据标记位规则表）、raw（跟踪数据表规则表）。每个规则表中包含多个数据链：INPUT（入站数据过滤）、OUTPUT（出站数据过滤）、FORWARD（转发数据过滤）、PREROUTING（路由前过滤）和POSTROUTING（路由后过滤），防火墙规则需要写入到具体的数据链中。图1展示了Linux防火墙的过滤框架，从图中可以看出，如果是外部主机发送数据包给防火墙本机，数据将会经过PREROUTING链和INPUT链；如果是防火墙本机发送数据包到外部主机，数据将会经过OUTPUT链和POSTROUTING链；如果防火墙作为路由负责转发数据，则数据将经过PREROUTING链、FORWARD链以及POSTROUTING链。</p>
+<p><img src="https://s2.loli.net/2022/04/28/Gk9tB6v3iKwRJCW.jpg" alt="img"></p>
+<h5 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h5><p>1、规则(rule)<br>规则(rule)就是网络管理员预定的条件，规则一般定义为“如果数据包头符合这样的条件，就这样处理这个数据包”。规则存储在内核空间的信息包过滤表 中，这些规则分别指定了源地址、目的地址、传输协议(TCP、UDP、ICMP)和服务类型(如HTTP、FTP、SMTP)。当数据包与规则匹配 时，iptables就根据规则所定义的方法来处理这些数据包，如放行(ACCEPT)、拒绝(REJECT)、或丢弃(DROP)等。配置防火墙的主要 规则就是添加、修改和删除这些规则。<br>2、链(chains)<br>链(chains)是数据包传播的路径，每一条链其实就是众多规则中的一个检查清单，每一条链中可以有一条或数条规则。当一个数据包到达一个链 时，iptables就会从链中的第一条规则开始检查，看该数据包是否满足规则所定义的条件，如果满足，系统就会根据该条规则所定义的方法处理该数据包， 否则iptables将继续检查下一条规则。如果该数据包不符合链中任何一何况规则，iptables就会根据该链预先定义的默认策略来处理该数据包。<br>3、表(tables)<br>表(tables)提供特定的功能，iptables内置3个表，即filter表、nat表和mangle表，分别用于实现包过滤，网络地址转换和包重构的功能。<br>(1)filter表。filter表主要用于过滤数据包，该表根据系统管理员预定义的一组规则过滤符合条件的数据包。对防火墙而言，主要利用filter表中指定一系列规则来实现对数据包进行过滤操作。<br>filter表是iptables默认的表，如果没有指定使用哪个表，iptables就默认使用filter表来执行所有的命令。filter表包含了 INPUT链(处理进入的数据包)、FORWARD链(处理转发的数据包)和OUTPUT链(处理本地生成的数据包)。在filter表中只允许对数据包 进行接受或丢弃的操作，而无法对数据包进行更改。<br>(2)nat表。nat青主要用于网络地址转换NAT，该表可以实现一对一、一对多和多对多的NAT工作，iptables就是使用该表实现共享上网功能 的。nat表包含了PREROUTING链(修改即将到来的数据包)、OUTPUT链(修改在路由之前本地生成的数据包)和POSTROUTING链(修 改即将出去的数据包)。<br>(3)mangle表。mangle表主要用于对指定的包进行修改，因为某些特殊应用可能去改写数据包的一些传输特性，例如理性数据包的TTL和TOS等，不过在实际应用中该表的使用率不高。</p>
+<h5 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h5><p>查看是否已经安装iptables以及iptables版本号</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -V #注意：V是大写字母</span><br></pre></td></tr></table></figure>
+
+<p>关闭iptables</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables stop</span><br></pre></td></tr></table></figure>
+
+<p>启动iptables</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables start</span><br></pre></td></tr></table></figure>
+
+<p>重启iptables</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables restart</span><br></pre></td></tr></table></figure>
+
+<p>保存命令行中设置的iptables规则到iptables文件中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">方法1：service iptables save</span><br><span class="line">方法2：etc/rc.d/init.d/iptables save</span><br></pre></td></tr></table></figure>
+
+<p>查看iptables规则</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">方法1：iptables -L -n</span><br><span class="line">方法2：service iptables status</span><br><span class="line">方法3：cat /ect/sysconfig/iptables</span><br><span class="line">方法4：iptables --list</span><br><span class="line">方法5：iptables-save</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">输出结果</span></span><br><span class="line">Chain INPUT (policy ACCEPT)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED,DNAT</span><br><span class="line">ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">INPUT_direct  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">INPUT_ZONES  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">DROP       all  --  0.0.0.0/0            0.0.0.0/0            ctstate INVALID</span><br><span class="line">REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited</span><br><span class="line"></span><br><span class="line">Chain FORWARD (policy ACCEPT)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0            ctstate RELATED,ESTABLISHED,DNAT</span><br><span class="line">ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FORWARD_direct  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FORWARD_IN_ZONES  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FORWARD_OUT_ZONES  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">DROP       all  --  0.0.0.0/0            0.0.0.0/0            ctstate INVALID</span><br><span class="line">REJECT     all  --  0.0.0.0/0            0.0.0.0/0            reject-with icmp-host-prohibited</span><br><span class="line"></span><br><span class="line">Chain OUTPUT (policy ACCEPT)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">ACCEPT     all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">OUTPUT_direct  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line"></span><br><span class="line">Chain FORWARD_IN_ZONES (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">FWDI_public  all  --  0.0.0.0/0            0.0.0.0/0           [goto] </span><br><span class="line"></span><br><span class="line">Chain FORWARD_OUT_ZONES (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">FWDO_public  all  --  0.0.0.0/0            0.0.0.0/0           [goto] </span><br><span class="line"></span><br><span class="line">Chain FORWARD_direct (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDI_public (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">FWDI_public_pre  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDI_public_log  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDI_public_deny  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDI_public_allow  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDI_public_post  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line"></span><br><span class="line">Chain FWDI_public_allow (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDI_public_deny (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDI_public_log (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDI_public_post (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDI_public_pre (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDO_public (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">FWDO_public_pre  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDO_public_log  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDO_public_deny  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDO_public_allow  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">FWDO_public_post  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line"></span><br><span class="line">Chain FWDO_public_allow (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDO_public_deny (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDO_public_log (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDO_public_post (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain FWDO_public_pre (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain INPUT_ZONES (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">IN_public  all  --  0.0.0.0/0            0.0.0.0/0           [goto] </span><br><span class="line"></span><br><span class="line">Chain INPUT_direct (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain IN_public (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">IN_public_pre  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">IN_public_log  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">IN_public_deny  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">IN_public_allow  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">IN_public_post  all  --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line">ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0           </span><br><span class="line"></span><br><span class="line">Chain IN_public_allow (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line">ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0            tcp dpt:22 ctstate NEW,UNTRACKED</span><br><span class="line"></span><br><span class="line">Chain IN_public_deny (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain IN_public_log (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain IN_public_post (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain IN_public_pre (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br><span class="line">Chain OUTPUT_direct (1 references)</span><br><span class="line">target     prot opt source               destination         </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>参数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> 1 --append -A chain 　　　　　　#添加规则到链</span><br><span class="line"> 2 --delete -D chain 　　　　　　#删除规则从链里</span><br><span class="line"> 3 --delete -D chain rulenum 　　　　　　#根据规则号删除</span><br><span class="line"> 4 --insert -I chain [rulenum] 　　　　　　#插入规则默认到第一条</span><br><span class="line"> 5 --list -L [chain [rulenum]] 　　　　 #列表规则</span><br><span class="line"> 6 --flush -F [chain] 　　　　#清空所有规则</span><br><span class="line"> 7 --zero -Z [chain [rulenum]] 　　　　 #计数器</span><br><span class="line"> 8 --policy -P chain target 　　　　　　　　#改默认规则</span><br><span class="line"> 9 --protocol -p proto 　　　　　　　　 #针对协议过滤，例如`tcp&#x27;</span><br><span class="line">10 --source 　　 -s address[/mask][...] #基于源地址</span><br><span class="line">11 --destination -d address[/mask][...] #基于目的地址</span><br><span class="line">12 --in-interface -i input name[+] 　　　 #指定进入接口</span><br><span class="line">13 --jump -j target 　　　　　　　　　 #跳转</span><br><span class="line">14 --numeric -n 　　　　　　　　　　　　 #数字输出地址和端口</span><br><span class="line">15 --out-interface -o output name[+]　　　　　 # 指定出去接口</span><br><span class="line">16 --table -t table 　　　　　　　　 #指定表(default: `filter&#x27;)</span><br><span class="line">17 --line-numbers 　　　　　　　　　　　　　　　　 #显示规则号</span><br></pre></td></tr></table></figure>
+
+<p>具体操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iptables -t filter -nL          #查看指定表filter中的策略 </span><br><span class="line">iptables -t nat -nL             #-n参数存在时显示的是ip，没有的话是主机名</span><br><span class="line">iptables -t mangle -nL   </span><br><span class="line">iptables -F                     #-F：删除指定表中所有规则</span><br><span class="line">iptables -nL </span><br><span class="line">service iptables save           #保存当前策略，保存了之后重启火墙策略重新出现</span><br><span class="line">vim /etc/sysconfig/iptables     #iptables的配置文件</span><br></pre></td></tr></table></figure>
+
+<p>根据规则iptables的处理动作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 *ACCEPT：允许数据包通过。</span><br><span class="line">2 *DROP：直接丢弃数据包，不给任何回应信息，这时候客户端会感觉自己的请求泥牛入海了，过了超时时间才会有反应。</span><br><span class="line">3 *REJECT：拒绝数据包通过，必要时会给数据发送端一个响应的信息，客户端刚请求就会收到拒绝的信息。</span><br><span class="line">4 *SNAT：源地址转换，解决内网用户用同一个公网地址上网的问题。</span><br><span class="line">5 *MASQUERADE：是SNAT的一种特殊形式，适用于动态的、临时会变的ip上。</span><br><span class="line">6 *DNAT：目标地址转换。</span><br><span class="line">7 *REDIRECT：在本机做端口映射。</span><br><span class="line">8 *LOG：在/var/log/messages文件中记录日志信息，然后将数据包传递给下一条规则，也就是说除了记录以外不对数据包做任何其他操作，仍然让下一条规则去匹配。</span><br></pre></td></tr></table></figure>
+
+<p>常用命令操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1 iptables -I INPUT -p tcp --dport 23:8809 -j DROP #过滤从23端口到8809端口</span><br><span class="line">2 iptables -I INPUT -p tcp -s 192.168.56.1 -j DROP #封单个IP</span><br><span class="line">3 iptables -I INPUT -p tcp --dport 23:8809 -j DROP #同时封多个端口：从23端口到8809端口</span><br><span class="line">4 iptables -A INPUT -P TCP --dport 80 -j ACCEPT #开发80端口</span><br><span class="line">5 iptables -I OUTPUT -p tcp --dport 80 -j DROP 　#不允许80端口流出</span><br><span class="line">6 iptables -I INPUT -p tcp -m multiport --dport 21,23,24,80,3306 -j DROP #匹配端口范围</span><br><span class="line">7 iptables -A INPUT -p icmp -s 192.168.56.0/24 --icmp-type 8 -j ACCEPT #设置同网段内可以访问（公司内部可以访问，其他人员不能访问）</span><br><span class="line">8 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT #允许关联的状态包（ftp协议，21连接端口，20数据传输端口）</span><br></pre></td></tr></table></figure>
+
+<h4 id="防火墙策略（ufw）"><a href="#防火墙策略（ufw）" class="headerlink" title="防火墙策略（ufw）"></a>防火墙策略（ufw）</h4><h5 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h5><p>UFW 全称为Uncomplicated Firewall，是Ubuntu 系统上默认的防火墙组件, 为了轻量化配置iptables 而开发的一款工具。 UFW 提供一个非常友好的界面用于创建基于IPV4，IPV6的防火墙规则。</p>
+<h5 id="开启和禁用"><a href="#开启和禁用" class="headerlink" title="开启和禁用"></a>开启和禁用</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ufw enable	#开启防火墙</span><br><span class="line">ufw disable	#禁用防火墙</span><br><span class="line">ufw reset	#重置防火墙，会把你所有已经添加的规则全部删除，并且禁用防火墙</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看ufw防火墙的状态"><a href="#查看ufw防火墙的状态" class="headerlink" title="查看ufw防火墙的状态"></a>查看ufw防火墙的状态</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ufw status</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">未开启的提示信息</span></span><br><span class="line">Status : inactive</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">开启后的提示信息</span></span><br><span class="line">Status : active</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置默认的防火墙规则，默认为允许"><a href="#设置默认的防火墙规则，默认为允许" class="headerlink" title="设置默认的防火墙规则，默认为允许"></a>设置默认的防火墙规则，默认为允许</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ufw default allow|deny	</span><br><span class="line">allow：允许</span><br><span class="line">deny：拒绝</span><br></pre></td></tr></table></figure>
+
+<h5 id="规则协议"><a href="#规则协议" class="headerlink" title="规则协议"></a>规则协议</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ufw [delete] [insert NUM]  allow|deny [in|out]  [PORT[/PROTOCOL] ]  [comment COMMENT]</span><br><span class="line"> </span><br><span class="line">delete : 删除这个规则</span><br><span class="line">insert : Num代表你要插入到防火墙规则的那个位置，规则是有序排列的。会根据需要来一个个检查</span><br><span class="line">allow|deny : 这条规则是允许的还是禁用的</span><br><span class="line">in|out: 这条规则对发送还是接收数据生效</span><br><span class="line">PORT: 端口号</span><br><span class="line">protocol : 协议，例如TCP还是UDP</span><br><span class="line">comment : 注释</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>具体操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ufw insert 2 allow in 22/tcp	#添加一条允许ssh的规则（ssh的端口号为22，协议是tcp），并且插入到位置2</span><br><span class="line">ufw deny in 22	#禁用22端口连入</span><br></pre></td></tr></table></figure>
+
+<h5 id="IP规则"><a href="#IP规则" class="headerlink" title="IP规则"></a>IP规则</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ufw  [delete]  [insert  NUM]  allow|deny  [in|out  [on INTERFACE]] [proto PROTOCOL] </span><br><span class="line">[from ADDRESS [port PORT]]  [to ADDRESS [port PORT]] [comment COMMENT]</span><br><span class="line"> </span><br><span class="line">INTERFACE ：网卡，就是针对哪个网卡生效，可以使用ifconfig或ip addr查看你的网卡</span><br><span class="line">form ADDRESS  : 源IP地址</span><br><span class="line">to ADDRESS : 目标IP地址</span><br><span class="line">PORT : 跟在源IP地址后面就是源IP地址的端口号，反之则是目标IP地址的端口号</span><br><span class="line">其他的都和协议规则的一致</span><br></pre></td></tr></table></figure>
+
+<p>具体操作</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ufw allow proto tcp from 192.168.1.1 port 22 #添加允许192.168.1.1 的22端口tcp协议（ssh）的规则</span><br><span class="line">ufw allow from 192.168.1.1 port 80 to 192.168.1.1 port 8080	#允许源IP地址192.168.1.1的8088端口 发送到 目标地址192.162.1.1的8080端口</span><br></pre></td></tr></table></figure>
+
+<h5 id="删除规则"><a href="#删除规则" class="headerlink" title="删除规则"></a>删除规则</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">方法1：ufw delete allow 22/tcp	#删除ssh规则</span><br><span class="line">方法2：使用序号删除</span><br><span class="line">ufw status numbered	#查询策略序号</span><br><span class="line">ufw delete 1	#删除第一条规则</span><br></pre></td></tr></table></figure>
+
+<h2 id="电源管理"><a href="#电源管理" class="headerlink" title="电源管理"></a>电源管理</h2><blockquote>
+<p>前言</p>
+<p>在 linux 领域内大多用在服务器上，很少遇到关机的操作。毕竟服务器上跑一个服务是永无止境的，除非特殊情况下，不得已才会关机。</p>
+<p>Linux 系统中为了提高磁盘的读写效率，对磁盘采取了 “预读迟写”操作方式。当用户 保存文件时，Linux 核心并不一定立即将保存数据写入物理磁盘中，而是将数据保存在缓冲区中，等缓冲区满时再写入磁盘，这种方式可以极大的提高磁盘写入数据的效率。</p>
+<p>但是， 也带来了安全隐患，如果数据还未写入磁盘时，系统掉电或者其他严重问题出现，则将导 致数据丢失。使用 sync 指令可以立即将缓冲区的数据写入磁盘。</p>
+</blockquote>
+<h3 id="sync"><a href="#sync" class="headerlink" title="sync"></a>sync</h3><p>功能：将数据由内存同步到硬盘中</p>
+<h3 id="halt"><a href="#halt" class="headerlink" title="halt"></a>halt</h3><p>功能：停机，关闭系统，但是不断电</p>
+<h3 id="poweroff"><a href="#poweroff" class="headerlink" title="poweroff"></a>poweroff</h3><p>功能：关机，断电</p>
+<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><p>功能：重启，等同于shutdown -r now</p>
+<h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><table>
+<thead>
+<tr>
+<th align="center">选项</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-H</td>
+<td align="center">相当于-halt，停机</td>
+</tr>
+<tr>
+<td align="center">-f</td>
+<td align="center">-f&#x3D;reboot重启</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">参数</th>
+<th align="center">功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">now</td>
+<td align="center">立刻关机</td>
+</tr>
+<tr>
+<td align="center">时间</td>
+<td align="center">等待多久后关机（时间单位是分钟）</td>
+</tr>
+</tbody></table>
+<h3 id="具体操作-1"><a href="#具体操作-1" class="headerlink" title="具体操作"></a>具体操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">（1）将数据由内存同步到硬盘中 </span><br><span class="line"><span class="meta prompt_">[root@]#</span><span class="language-bash"><span class="built_in">sync</span></span> </span><br><span class="line">（2）重启 </span><br><span class="line"><span class="meta prompt_">[root@]# </span><span class="language-bash">reboot</span> </span><br><span class="line">（3）停机（不断电） </span><br><span class="line"><span class="meta prompt_">[root@]#</span><span class="language-bash">halt</span> </span><br><span class="line">（4）计算机将在 1 分钟后关机，并且会显示在登录用户的当前屏幕中 </span><br><span class="line"><span class="meta prompt_">[root@]#</span><span class="language-bash">shutdown -h 1 ‘This server will shutdown after 1 mins’</span> </span><br><span class="line">（5）立马关机（等同于 poweroff） </span><br><span class="line"><span class="meta prompt_">[root@]# </span><span class="language-bash">shutdown -h now</span> </span><br><span class="line">（6）系统立马重启（等同于 reboot） </span><br><span class="line"><span class="meta prompt_">[root@]# </span><span class="language-bash">shutdown -r now</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="软件管理"><a href="#软件管理" class="headerlink" title="软件管理"></a>软件管理</h2><h3 id="RPM"><a href="#RPM" class="headerlink" title="RPM"></a>RPM</h3><p>RPM（RedHat Package Manager），RedHat软件包管理工具，是Linux这系列操作系统里面的打包安装工具。</p>
+<h4 id="RPM包的名称格式"><a href="#RPM包的名称格式" class="headerlink" title="RPM包的名称格式"></a>RPM包的名称格式</h4><p><code>Apache-1.3.23-11.i386.rpm</code> - “apache” 软件名称</p>
+<ul>
+<li>“1.3.23-11”软件的版本号，主版本和此版本</li>
+<li>“i386”是软件所运行的硬件平台，Intel 32位处理器的统称</li>
+<li>“rpm”文件扩展名，代表RPM包</li>
+</ul>
+<h4 id="RPM查询命令（rpm-qa）"><a href="#RPM查询命令（rpm-qa）" class="headerlink" title="RPM查询命令（rpm -qa）"></a>RPM查询命令（rpm -qa）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa	#查询所安装的所有rpm的软件包</span><br><span class="line">rpm -qa | grep rpm软件包	#查询指定rpm包</span><br></pre></td></tr></table></figure>
+
+<h4 id="RPM卸载命令（rpm-e）"><a href="#RPM卸载命令（rpm-e）" class="headerlink" title="RPM卸载命令（rpm -e）"></a>RPM卸载命令（rpm -e）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -e PRM软件包</span><br><span class="line">rpm -e --nodeps 软件包</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-e：卸载软件包</li>
+<li>–nodeeps：卸载软件时，不检查依赖。这样的话，那些使用该软件包的软件在此之后可能就不能正常工作了</li>
+</ul>
+<h4 id="RPM安装命令（rpm-ivh）"><a href="#RPM安装命令（rpm-ivh）" class="headerlink" title="RPM安装命令（rpm -ivh）"></a>RPM安装命令（rpm -ivh）</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh RPM 包全名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-i：install，安装</li>
+<li>-v：-verbose，显示详细信息</li>
+<li>-h：-hash，进度条</li>
+<li>–nodeps：安装前不检查依赖</li>
+</ul>
+<h3 id="YUM"><a href="#YUM" class="headerlink" title="YUM"></a>YUM</h3><p>YUM（全称为 Yellow dog Updater, Modified）是一个在 Fedora 和 RedHat 以及 CentOS 中的 Shell 前端软件包管理器，基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包 并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包，无须繁琐地一次次下载、安装。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://github.com/HKingDragon/hkingdragon.github.io">Dragon</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://github.com/HKingDragon/hkingdragon.github.io/2022/04/27/Linux%E5%85%A5%E9%97%A8/">https://github.com/HKingDragon/hkingdragon.github.io/2022/04/27/Linux%E5%85%A5%E9%97%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/HKingDragon/hkingdragon.github.io" target="_blank">Dragon's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2022/04/26/FAT32%E7%B3%BB%E7%BB%9F/"><img class="prev-cover" src="https://s2.loli.net/2022/04/26/Yv2lGj8x7Un5JIH.jpg" onerror="onerror=null;src='https://img0.baidu.com/it/u=1284263657,456284223&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=875&amp;h=500'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">FAT32系统</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fww2.sinaimg.cn%2Flarge%2Fc1608aa0gw1euctw87ul7g20b40b4mzl.gif&amp;refer=http%3A%2F%2Fwww.sina.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=auto?sec=1653544265&amp;t=ac0fd90b3540bb1abf4de1135021b748" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Dragon</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" href="https://github.com/HKingDragon"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HKingDragon" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:3173957575@QQ.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎访问我的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E5%91%BD%E4%BB%A4%E6%B1%87%E6%80%BB"><span class="toc-number">1.</span> <span class="toc-text">Linux命令汇总</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Linux%E7%9A%84%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.Linux的简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">主要特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.1.2.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.3.</span> <span class="toc-text">Linux内核版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC"><span class="toc-number">1.1.4.</span> <span class="toc-text">Linux发行版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E4%B8%8EWindows%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.5.</span> <span class="toc-text">Linux与Windows的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.</span> <span class="toc-text">文件目录介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ifconfig"><span class="toc-number">1.3.1.</span> <span class="toc-text">ifconfig</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">功能描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">具体使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85%E2%80%93MAC%E5%9C%B0%E5%9D%80"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">知识补充–MAC地址</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping"><span class="toc-number">1.3.2.</span> <span class="toc-text">ping</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">功能描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">参数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8-1"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">具体使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85%E2%80%93Ping"><span class="toc-number">1.3.2.5.</span> <span class="toc-text">知识补充–Ping</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.3.3.</span> <span class="toc-text">修改IP地址</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#IP%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">IP配置文件位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">进入配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">解析配置文件内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85%E2%80%93eth%E5%92%8Cens%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">知识补充–eth和ens的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E6%9C%BA%E5%90%8D%E7%A7%B0"><span class="toc-number">1.3.4.</span> <span class="toc-text">主机名称</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E5%90%8D%E7%A7%B0"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">查看当前服务器主机名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B4%E6%97%B6%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">临时修改主机名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%B8%E4%B9%85%E4%BF%AE%E6%94%B9%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">永久修改主机名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hosts%E6%98%A0%E5%B0%84"><span class="toc-number">1.3.5.</span> <span class="toc-text">hosts映射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E8%A1%A5%E5%85%85%E2%80%93hosts%E6%96%87%E4%BB%B6"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">知识补充–hosts文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86%E2%80%93ssh"><span class="toc-number">1.3.6.</span> <span class="toc-text">远程登陆–ssh</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85ssh%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.3.6.1.</span> <span class="toc-text">安装ssh服务</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">系统管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Linux%E4%B8%AD%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%92%8C%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.4.1.</span> <span class="toc-text">Linux中的进程和服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E2%80%93ps"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">进程管理–ps</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.1.1.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux%E4%B8%8A%E8%BF%9B%E7%A8%8B%E6%9C%89%E4%BA%94%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="toc-number">1.4.1.1.2.</span> <span class="toc-text">Linux上进程有五种状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.4.1.1.3.</span> <span class="toc-text">查看进程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8Bstat%E7%8A%B6%E6%80%81"><span class="toc-number">1.4.1.1.4.</span> <span class="toc-text">进程stat状态</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86%E2%80%93kill"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">进程管理–kill</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-1"><span class="toc-number">1.4.1.2.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%89%E9%A1%B9"><span class="toc-number">1.4.1.2.3.</span> <span class="toc-text">选项</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%BF%A1%E5%8F%B7"><span class="toc-number">1.4.1.2.4.</span> <span class="toc-text">常用信号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#kill-15"><span class="toc-number">1.4.1.2.5.</span> <span class="toc-text">kill -15</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#kill-9"><span class="toc-number">1.4.1.2.6.</span> <span class="toc-text">kill -9</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E2%80%93systemctl"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">服务管理–systemctl</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8-2"><span class="toc-number">1.4.1.3.1.</span> <span class="toc-text">具体使用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#systemctl-%E8%AE%BE%E7%BD%AE%E5%90%8E%E5%8F%B0%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%87%AA%E5%90%AF%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.2.</span> <span class="toc-text">systemctl 设置后台服务的自启配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%8A%B6%E6%80%81"><span class="toc-number">1.4.2.0.1.</span> <span class="toc-text">查看服务开机启动状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B3%E6%8E%89%E6%8C%87%E5%AE%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8"><span class="toc-number">1.4.2.0.2.</span> <span class="toc-text">关掉指定服务的自动启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E6%8C%87%E5%AE%9A%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8"><span class="toc-number">1.4.2.0.3.</span> <span class="toc-text">开启指定服务的自动启动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%90%AF%E5%8A%A8%E5%A4%B1%E8%B4%A5%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.4.2.0.4.</span> <span class="toc-text">查看启动失败的服务</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%8D%E5%8A%A1%E6%98%AF%E5%90%A6%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-number">1.4.2.0.5.</span> <span class="toc-text">查看服务是否开机启动</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">系统运行级别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="toc-number">1.4.2.1.1.</span> <span class="toc-text">查看当前系统运行级别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Linux%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="toc-number">1.4.2.1.2.</span> <span class="toc-text">Linux系统运行级别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB%EF%BC%88%E4%B8%B4%E6%97%B6%E7%94%9F%E6%95%88%EF%BC%8C%E9%87%8D%E5%90%AF%E5%A4%B1%E6%95%88%EF%BC%89"><span class="toc-number">1.4.2.1.3.</span> <span class="toc-text">切换系统运行级别（临时生效，重启失效）</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%B3%E6%9C%BA"><span class="toc-number">1.4.2.1.3.1.</span> <span class="toc-text">关机</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%87%8D%E5%90%AF"><span class="toc-number">1.4.2.1.3.2.</span> <span class="toc-text">重启</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E7%B3%BB%E7%BB%9F%E8%BF%90%E8%A1%8C%E7%BA%A7%E5%88%AB-%E6%B0%B8%E4%B9%85%E7%94%9F%E6%95%88"><span class="toc-number">1.4.2.1.4.</span> <span class="toc-text">切换系统运行级别(永久生效)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.2.1.4.1.</span> <span class="toc-text">具体操作</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.4.3.</span> <span class="toc-text">防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#firewalld%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">firewalld的基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEfirewalld-cmd"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">配置firewalld-cmd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%AD%96%E7%95%A5-firewalld"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">防火墙策略(firewalld)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#firewall-config%E4%B8%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E5%B7%A5%E5%85%B7"><span class="toc-number">1.4.3.3.1.</span> <span class="toc-text">firewall-config为图形化工具</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#firewall%E5%91%BD%E4%BB%A4%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE%E7%AD%96%E7%95%A5"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">firewall命令工具配置策略</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E7%BB%8F%E5%BC%80%E6%94%BE%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.4.3.4.0.1.</span> <span class="toc-text">查看已经开放的端口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="toc-number">1.4.3.4.0.2.</span> <span class="toc-text">查看配置信息</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%90%AF-x2F-%E7%A7%BB%E9%99%A4%E6%8C%87%E5%AE%9A%E5%8D%8F%E8%AE%AE%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.4.3.4.1.</span> <span class="toc-text">开启&#x2F;移除指定协议的端口</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%BC%80%E6%94%BE%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.4.3.4.1.1.</span> <span class="toc-text">开放端口</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.4.3.4.1.2.</span> <span class="toc-text">移除端口</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEIP%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-number">1.4.3.4.2.</span> <span class="toc-text">配置IP访问权限</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E6%9F%90IP%E7%9A%84%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="toc-number">1.4.3.4.2.1.</span> <span class="toc-text">限制某IP的访问权限</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E5%90%AF%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.4.3.4.3.</span> <span class="toc-text">重启防火墙</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%AD%96%E7%95%A5-iptable"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">防火墙策略(iptable)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="toc-number">1.4.3.5.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.4.3.5.2.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.3.5.3.</span> <span class="toc-text">常用命令</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%AD%96%E7%95%A5%EF%BC%88ufw%EF%BC%89"><span class="toc-number">1.4.3.6.</span> <span class="toc-text">防火墙策略（ufw）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.4.3.6.1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%80%E5%90%AF%E5%92%8C%E7%A6%81%E7%94%A8"><span class="toc-number">1.4.3.6.2.</span> <span class="toc-text">开启和禁用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8Bufw%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E7%8A%B6%E6%80%81"><span class="toc-number">1.4.3.6.3.</span> <span class="toc-text">查看ufw防火墙的状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E7%9A%84%E9%98%B2%E7%81%AB%E5%A2%99%E8%A7%84%E5%88%99%EF%BC%8C%E9%BB%98%E8%AE%A4%E4%B8%BA%E5%85%81%E8%AE%B8"><span class="toc-number">1.4.3.6.4.</span> <span class="toc-text">设置默认的防火墙规则，默认为允许</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A7%84%E5%88%99%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.4.3.6.5.</span> <span class="toc-text">规则协议</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IP%E8%A7%84%E5%88%99"><span class="toc-number">1.4.3.6.6.</span> <span class="toc-text">IP规则</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%A7%84%E5%88%99"><span class="toc-number">1.4.3.6.7.</span> <span class="toc-text">删除规则</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E6%BA%90%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.</span> <span class="toc-text">电源管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sync"><span class="toc-number">1.5.1.</span> <span class="toc-text">sync</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#halt"><span class="toc-number">1.5.2.</span> <span class="toc-text">halt</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#poweroff"><span class="toc-number">1.5.3.</span> <span class="toc-text">poweroff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reboot"><span class="toc-number">1.5.4.</span> <span class="toc-text">reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shutdown"><span class="toc-number">1.5.5.</span> <span class="toc-text">shutdown</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C-1"><span class="toc-number">1.5.6.</span> <span class="toc-text">具体操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="toc-number">1.6.</span> <span class="toc-text">软件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RPM"><span class="toc-number">1.6.1.</span> <span class="toc-text">RPM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#RPM%E5%8C%85%E7%9A%84%E5%90%8D%E7%A7%B0%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.6.1.1.</span> <span class="toc-text">RPM包的名称格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RPM%E6%9F%A5%E8%AF%A2%E5%91%BD%E4%BB%A4%EF%BC%88rpm-qa%EF%BC%89"><span class="toc-number">1.6.1.2.</span> <span class="toc-text">RPM查询命令（rpm -qa）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RPM%E5%8D%B8%E8%BD%BD%E5%91%BD%E4%BB%A4%EF%BC%88rpm-e%EF%BC%89"><span class="toc-number">1.6.1.3.</span> <span class="toc-text">RPM卸载命令（rpm -e）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RPM%E5%AE%89%E8%A3%85%E5%91%BD%E4%BB%A4%EF%BC%88rpm-ivh%EF%BC%89"><span class="toc-number">1.6.1.4.</span> <span class="toc-text">RPM安装命令（rpm -ivh）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YUM"><span class="toc-number">1.6.2.</span> <span class="toc-text">YUM</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/27/Linux%E5%85%A5%E9%97%A8/" title="Linux入门"><img src="/linear-gradient(20deg,%20#0062be,%20#925696,%20#cc426e,%20#fb0347)" onerror="this.onerror=null;this.src='https://img0.baidu.com/it/u=1284263657,456284223&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=875&amp;h=500'" alt="Linux入门"/></a><div class="content"><a class="title" href="/2022/04/27/Linux%E5%85%A5%E9%97%A8/" title="Linux入门">Linux入门</a><time datetime="2022-04-27T11:30:41.000Z" title="发表于 2022-04-27 19:30:41">2022-04-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/26/FAT32%E7%B3%BB%E7%BB%9F/" title="FAT32系统"><img src="https://s2.loli.net/2022/04/26/Yv2lGj8x7Un5JIH.jpg" onerror="this.onerror=null;this.src='https://img0.baidu.com/it/u=1284263657,456284223&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=875&amp;h=500'" alt="FAT32系统"/></a><div class="content"><a class="title" href="/2022/04/26/FAT32%E7%B3%BB%E7%BB%9F/" title="FAT32系统">FAT32系统</a><time datetime="2022-04-26T11:38:48.000Z" title="发表于 2022-04-26 19:38:48">2022-04-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/26/NTFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="NTFS文件系统"><img src="https://s2.loli.net/2022/04/26/sJ42YU7uCZvKpWH.jpg" onerror="this.onerror=null;this.src='https://img0.baidu.com/it/u=1284263657,456284223&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=JPEG?w=875&amp;h=500'" alt="NTFS文件系统"/></a><div class="content"><a class="title" href="/2022/04/26/NTFS%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="NTFS文件系统">NTFS文件系统</a><time datetime="2022-04-26T10:07:55.000Z" title="发表于 2022-04-26 18:07:55">2022-04-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By Dragon</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">This is Dragon's Blog</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (true){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-nest.min.js"></script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="false" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="false" async="async"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"]):not([href="/music/"]):not([href="/no-pjax/"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
