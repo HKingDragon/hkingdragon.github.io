@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/HKingDragon/hkingdragon.github.io/2022/05/18/%E9%83%A8%E7%BD%B2Openstack%E4%BA%91%E5%B9%B3%E5%8F%B0/</loc>
+    
+    <lastmod>2022-05-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/HKingDragon/hkingdragon.github.io/2022/05/18/%E9%83%A8%E7%BD%B2%E4%B8%BB%E4%BB%8E%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     
     <lastmod>2022-05-18</lastmod>
@@ -130,36 +139,36 @@
 
   <url>
     <loc>https://github.com/HKingDragon/hkingdragon.github.io</loc>
-    <lastmod>2022-05-18</lastmod>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://github.com/HKingDragon/hkingdragon.github.io/tags/%E6%9C%8D%E5%8A%A1/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <loc>https://github.com/HKingDragon/hkingdragon.github.io/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://github.com/HKingDragon/hkingdragon.github.io/tags/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <loc>https://github.com/HKingDragon/hkingdragon.github.io/tags/%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://github.com/HKingDragon/hkingdragon.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://github.com/HKingDragon/hkingdragon.github.io/tags/Linux/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -167,29 +176,36 @@
 
   
   <url>
-    <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/</loc>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/%E6%95%B0%E6%8D%AE%E6%81%A2%E5%A4%8D/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/%E7%B3%BB%E7%BB%9F%E8%BF%90%E7%BB%B4/</loc>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/%E7%90%86%E8%AE%BA/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <lastmod>2022-05-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/OpenStack/</loc>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://github.com/HKingDragon/hkingdragon.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-    <lastmod>2022-05-18</lastmod>
+    <lastmod>2022-05-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
